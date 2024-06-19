@@ -21,6 +21,7 @@ class StatementsController extends Controller{
                 SC.name category_name
             FROM ${Statement.DBNAME} S
             LEFT JOIN ${StatementCategory.DBNAME} SC ON SC.id = S.category_id
+            ORDER BY S.created_at DESC, S.ID DESC
         `;
         let rows = await Controller.query(this.conn, sql);
 
