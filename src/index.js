@@ -6,6 +6,7 @@ const StatementRouter = require('./routers/statement.router');
 const StatementCategoriesRouter = require('./routers/statement-categories.router');
 const GymRouter = require('./routers/gym.router');
 const ChatRouter = require('./routers/chat.router');
+const AuthRouter = require('./routers/auth.router');
 
 const app = express();
 const port = 8181;
@@ -17,7 +18,7 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 
-
+app.use('/auth', AuthRouter);
 app.use('/statements', StatementRouter);
 app.use('/statement-categories', StatementCategoriesRouter);
 app.use('/gym', GymRouter);
