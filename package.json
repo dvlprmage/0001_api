@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "serve": "nodemon ./src/index.js localhost 8181"
+    "serve": "nodemon ./src/index.js localhost 8282"
   },
   "dependencies": {
     "cors": "^2.8.5",

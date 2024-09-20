@@ -9,7 +9,7 @@ const ChatRouter = require('./routers/chat.router');
 const AuthRouter = require('./routers/auth.router');
 
 const app = express();
-const port = 8181;
+const port = 8080;
 
 app.use(cors({
   origin:'*',

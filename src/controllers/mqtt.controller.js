@@ -1,15 +1,15 @@
 const mqtt = require('mqtt');
 
 class MqttController{
-    constructor(){
-        this.client = mqtt.connect('mqtt://localhost:1883',{
-            username: 'system',
-            password: '123123',
-        });
+    constructor(host='mqtt://localhost:1883',options = {
+        username: 'system',
+        password: '123123',
+    }){
+        this.client = mqtt.connect(host,options);
     }
 
     async publish(channel, message){
-        this.client.publish(channel, message);
+        return this.client.publish(channel, message);
     }
 }
 

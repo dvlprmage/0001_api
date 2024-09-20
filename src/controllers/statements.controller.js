@@ -43,12 +43,13 @@ class StatementsController extends Controller{
 
     async create(data){
         let sql = `
-            INSERT INTO ${Statement.DBNAME} (created_at, amount, category_id, description) VALUES (?, ?, ?, ?)
+            INSERT INTO ${Statement.DBNAME} (created_at, amount, category_id, legacy_code, description) VALUES (?, ?, ?, ?, ?)
         `;
         let params = [
             data?.created_at,
             data?.amount,
             data?.category_id,
+            data?.legacy_code,
             data?.description
         ];
 
